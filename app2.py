@@ -38,7 +38,8 @@ headers = {
     "x-pm-apiversion": "3",
 }
 
-checks = []
+taken = []
+avail = []
 
 
 def check():
@@ -49,10 +50,10 @@ def check():
     print(f"Checking {rand}  ...")
     if kek.get("Code") == 12106:
         print(f"Code 12106: Username {rand} already used")
-        checks.append(f"{rand} taken")
+        taken.append(f"{rand} taken")
     elif kek.get("Code") == 1000:
         print(f"Code 1000: Username {rand} avail")
-        checks.append(f"{rand} avail")
+        avail.append(f"{rand} avail")
     else:
         print("wat")
 
@@ -60,4 +61,4 @@ def check():
 if __name__ == "__main__":
     while True:
         check()
-        print(checks)
+        print(avail)
